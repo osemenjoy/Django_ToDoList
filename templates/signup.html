@@ -1,19 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<!DOCTYPE html>
-<html>
 <head>
     <title>Sign Up</title>
 </head>
-<body>
-{% block content %}
-<h2>Sign Up</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-</form>
-<p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+<div class="container">
+    <div class="image-container">
+        <!-- Add your image here -->
+        <img src="{% static 'images/image1.jpeg' %}" alt="Login Image">
+    </div>
+    <div class="login-container">
+        <h2>Sign Up Page</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+        
+<div class="form-group">
+    <label >{{form.username.label}} </label>
+    {{form.username}}
+    <label >{{form.email.label}} </label>
+    {{form.email}} <br>
+    <label >{{form.password1.label}} </label>
+    {{form.password1}}
+    <label >{{form.password2.label}} </label>
+    {{form.password2}}
+</div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+</div>
+
 {% endblock content %}
-</body>
-</html>

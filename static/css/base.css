@@ -1,3 +1,112 @@
-body {
-    background-color: aqua;
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    width: 50%;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(0.8) contrast(1.2) saturation(1.1);
+    transition: filter 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    filter: brightness(1) contrast(1.2) saturation(1.3);
+}
+
+.login-container {
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container form {
+    display: block;
+    border: 1px solid #ccc; /* added border style */
+    border-radius: 10px; /* added border radius */
+    padding: 50px; /* added padding to create space between border and form elements */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 60px;
+}
+
+.login-container input[type="text"],.login-container input[type="password"] {
+    width: 80%;
+    height: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.login-container input[type="text"]:focus,.login-container input[type="password"]:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container button[type="submit"] {
+    width: 100px;
+    margin: 5px auto;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],.form-group input[type="email"],.form-group input[type="password"] {
+    width: 98%;
+    height: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+  
+}
+
+.form-group input[type="text"]:focus,.form-group input[type="email"]:focus,.form-group input[type="password"]:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

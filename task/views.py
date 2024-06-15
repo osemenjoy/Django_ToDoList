@@ -8,25 +8,17 @@ from django.shortcuts import get_object_or_404
 
 # TaskList view is used to display a list of tasks
 class TaskList(LoginRequiredMixin, ListView):
-    # Specify the model to use
     model = Tasks
-    # Specify the template to use
     template_name = 'task-list.html'
-    # Specify the context object name
     context_object_name = 'tasks'
-
-    # Override the get_queryset method to filter tasks by the current user
     def get_queryset(self):
         # Return tasks that belong to the current user
         return Tasks.objects.filter(user=self.request.user)
 
 # TaskCreate view is used to create a new task
 class TaskCreate(LoginRequiredMixin, CreateView):
-    # Specify the model to use
     model = Tasks
-    # Specify the fields to include in the form
     fields = ['title', 'description', 'complete']
-    # Specify the template to use
     template_name = 'task-create.html'
 
     # Override the form_valid method to set the user of the task
@@ -38,11 +30,8 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 # TaskUpdate view is used to update an existing task
 class TaskUpdate(LoginRequiredMixin, UpdateView):
-    # Specify the model to use
     model = Tasks
-    # Specify the fields to include in the form
     fields = ['title', 'description', 'complete']
-    # Specify the template to use
     template_name = 'task-update.html'
 
     # Override the get_object method to check if the task belongs to the current user
@@ -58,11 +47,8 @@ class TaskUpdate(LoginRequiredMixin, UpdateView):
 
 # TaskDelete view is used to delete a task
 class TaskDelete(LoginRequiredMixin, DeleteView):
-    # Specify the model to use
     model = Tasks
-    # Specify the template to use
     template_name = 'task-delete.html'
-    # Specify the success URL
     success_url = reverse_lazy('tasks')
 
     # Override the get_object method to check if the task belongs to the current user
