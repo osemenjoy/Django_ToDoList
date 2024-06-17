@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<head>
+    <title>Edit task</title>
+</head>
 
-<form action="" method="post">
-
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
-</form>
+<div class="task-form-container">
+    <a href="{% url 'tasks' %}" class="arrow" >&#x2190; Go Back</a>
+    <h2>Update Task</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create Task" class="btn-submit">
+    </form>
+  </div>
 
 {% endblock content %}
+
+

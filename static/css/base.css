@@ -110,3 +110,168 @@
     border-color: #aaa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
+.task-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    padding-left: 50px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-form-container h2 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* updated to align items to the left */
+  }
+  
+  label {
+    margin-bottom: 10px;
+    text-align: left; /* added to align label text to the left */
+    width: 100px; /* added to set a fixed width for labels */
+    display: inline-block; /* added to make label an inline-block element */
+  }
+  
+  input[type="text"], input[type="date"], textarea {
+    width: calc(100% - 100px); /* updated to calculate width based on label width */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .btn-submit {
+    margin-top: 20px;
+  }
+
+  .arrow {
+    text-decoration: none; /* remove underline */
+    font-size: 24px; /* increase font size to make arrow larger */
+    font-weight: bold; /* make arrow thicker */
+    color: #00698f; /* default color */
+    display: inline-block; /* make it an inline-block element */
+    margin-bottom: 10px; /* add some space beneath the arrow */
+  }
+  
+  .arrow:hover {
+    color: #ff0000; /* change color to red on hover */
+  }
+
+
+  /* task.css */
+
+.task-list-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 35px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex; /* Added */
+    align-items: center; /* Added */
+    margin-top: 20px;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+.task-title:hover {
+    color: #3e8e41;
+}
+
+.task-actions {
+    float: right;
+}
+
+.btn {
+    color: #fff;
+    padding: 10px 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+}
+
+.btn-logout {
+    background-color: #ff0000;
+   
+}
+
+.btn-create {
+    background-color: #007bff;   
+    margin-right: 480px;
+}
+
+.btn-delete {
+    background-color: #ff0000;
+    padding: 5px 10px;
+    margin-left: 10px; /* Added */
+}
+
+.no-tasks {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.username {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.not-logged-in {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-container {
+    display: flex; /* Added */
+    justify-content: space-between; /* Added */
+    margin-bottom: 20px; /* Added */
+  }

@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-<form action="" method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete this task? {{task.title}}</p>
-    <input type="submit" value="Confirm">
-</form>
+
+<head>
+    <title>delete task</title>
+</head>
+
+<div class="task-form-container">
+    <a href="{% url 'tasks' %}" class="arrow" >&#x2190; Go Back</a>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete this task? {{task.title}}</p>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
 {% endblock content %}

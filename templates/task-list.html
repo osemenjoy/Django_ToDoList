@@ -1,34 +1,50 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-{% if user.is_authenticated %}
-<h1>Welcome {{user.username}}</h1>
-<form action="{% url 'logout' %}" method="post">
+<head>
+    <link rel="stylesheet" href="{% static 'css/task.css' %}">
+    <title>Tasks</title>
+</head>
+
+
+
+
+
+<div class="task-list-container">
+    {% if user.is_authenticated %}
+    <h1 class="username">Welcome {{user.username}}</h1>
+    <form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
-    <button type="submit">Logout</button>
-</form>
-<hr>
-
-{% else %}
-<p>You are not Logged in</p>
-<a href="{% url 'login' %}">login</a>
-{% endif %}
-
-
-<a href="{% url 'task-create' %}">&#x2b; </a>
-
-{% for task in tasks %}
-
-<div>
-    <div>
-        <p><a href="{% url 'task-update' task.id %}">{{task.title}}</a></p>
-    </div>
-    <div>
-        <a href="{% url 'task-delete' task.id %}">&#x2715;</a>
-    </div>
+<div class="btn-container">
+    <a class="btn btn-create" href="{% url 'task-create' %}">&#x2b; Create New Task</a>
+    <button class="btn btn-logout" type="submit">Logout</button>
 </div>
+    </form>
+    <hr>
 
-{% endfor %}
+    {% else %}
+    <p class="not-logged-in">You are not Logged in</p>
+    <a class="btn btn-login" href="{% url 'login' %}">login</a>
+    {% endif %}
+
+
+    <ul class="task-list">
+        {% for task in tasks %}
+        <li class="task">
+            <div class="task-title">
+                <a href="{% url 'task-update' task.id %}">{{task.title}}</a>
+            </div>
+            <div class="task-actions">
+                <a class="btn btn-delete" href="{% url 'task-delete' task.id %}">&#x2715;</a>
+            </div>
+        </li>
+        {% empty %}
+        <li class="no-tasks">No tasks available.</li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock content %}
